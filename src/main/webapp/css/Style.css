@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+
+#signHeader{
+	margin-top: 5rem;
+	color: red;
+}
+
+#btnAddSubject{
+	margin-top: 2rem;
+	position: relative;
+}
+
+
+.container{
+	padding: 1rem;
+	margin-top: 2rem;
+	border-style: solid;
+	width: 50%;
+	
+	border-radius: 10.rem;
+	
+}
+
+#username{
+	margin-left: 12rem;
+	width: 50%;
+}
+	
+#password{
+	margin-left: 12rem;
+	width: 50%;
+}
+
+#btnLogin{
+	margin-top: 2rem;
+	width: 25%;
+}
+

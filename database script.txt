@@ -1,0 +1,19 @@
+create database studentmanagement;
+use studentmanagement;
+
+Create table user(username varchar(25) primary key,password varchar(25) not null);
+
+insert into user values("Admin","Admin");
+
+create table subject(subject_id int primary key auto_increment,name varchar(25) not null,
+credit int not null);
+
+create table class(classId int primary key auto_increment,name varchar(25) not null,
+hours int not null,s_id int,
+constraint SubjectID_fk foreign key(s_id) References subject(subject_id));
+
+create table student(studentId int primary key auto_increment,fullname varchar(25) not null,
+c_id int,constraint ClassID_fk foreign key(c_id) References class(classId));
+
+create table teacher(teacher_id int primary key auto_increment,fullname varchar(25) not null,
+level varchar(25) not null);
