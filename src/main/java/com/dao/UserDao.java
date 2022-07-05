@@ -19,6 +19,8 @@ public class UserDao {
 		qry.setParameter("username", u.getUsername());
 		qry.setParameter("password", u.getPassword());
 		List<User> lu = qry.list();
+		
+		session.close();
 		return lu.size();
 	}
 }

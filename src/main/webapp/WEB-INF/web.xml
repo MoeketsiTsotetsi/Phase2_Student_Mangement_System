@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name>OnlineStudentManagementSystem</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -28,5 +28,65 @@
   <servlet-mapping>
     <servlet-name>AddSubjectController</servlet-name>
     <url-pattern>/AddSubjectController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TeacherServlet</display-name>
+    <servlet-name>TeacherServlet</servlet-name>
+    <servlet-class>com.controller.TeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TeacherServlet</servlet-name>
+    <url-pattern>/TeacherServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClassController</display-name>
+    <servlet-name>ClassController</servlet-name>
+    <servlet-class>com.controller.ClassController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClassController</servlet-name>
+    <url-pattern>/ClassController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClassController2</display-name>
+    <servlet-name>ClassController2</servlet-name>
+    <servlet-class>com.controller.ClassController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClassController2</servlet-name>
+    <url-pattern>/ClassController2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClassServlet</display-name>
+    <servlet-name>ClassServlet</servlet-name>
+    <servlet-class>com.controller.ClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClassServlet</servlet-name>
+    <url-pattern>/ClassServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentController</display-name>
+    <servlet-name>StudentController</servlet-name>
+    <servlet-class>com.controller.StudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentController</servlet-name>
+    <url-pattern>/StudentController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClassReportController</display-name>
+    <servlet-name>ClassReportController</servlet-name>
+    <servlet-class>com.controller.ClassReportController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClassReportController</servlet-name>
+    <url-pattern>/ClassReportController</url-pattern>
   </servlet-mapping>
 </web-app>

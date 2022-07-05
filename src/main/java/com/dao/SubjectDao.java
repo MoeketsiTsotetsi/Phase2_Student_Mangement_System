@@ -20,6 +20,7 @@ public class SubjectDao {
 			trans.begin();
 			session.save(sub);
 			trans.commit();
+			session.close();
 			return 1;
 		} catch (Exception e) {
 			System.out.println(e);
