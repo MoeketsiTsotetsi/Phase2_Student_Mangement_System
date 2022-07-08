@@ -17,7 +17,7 @@ Object tlist = session.getAttribute("tList");
 <div class="container">
 <h2 class="text-center">Teacher List</h2>
 
-<table class="table table-striped">
+<table class="table table-striped table-dark">
 <tr>
 <th>Teacher ID</th>
 <th>Name</th>

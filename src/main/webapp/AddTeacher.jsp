@@ -11,13 +11,13 @@
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
 <div class="container text-center">
-<h3>Add New Subject</h3>
+<h3>Add New Teacher</h3>
 
 <form action="TeacherServlet" method="post">
 
 <div class="mb-2">
 <label>Teacher Name</label> 
-<input type="text" name="fullaname"><br>
+<input type="text" name="fullname"><br>
  
 </div>
 <div class="mb-2">

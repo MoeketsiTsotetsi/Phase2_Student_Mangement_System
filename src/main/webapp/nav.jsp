@@ -23,26 +23,30 @@
        <li class="nav-item">
         <a class="nav-link" href="AddSubject.jsp"> Add Subjects</a>
       </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="AddSubjectController">View Subjects</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="AddTeacher.jsp"> Add Teachers</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="TeacherServlet">View Teachers</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="AddClass.jsp"> Add Classes</a>
       </li>
       
-     
-      <li class="nav-item">
-        <a class="nav-link" href="AddStudent.jsp"> Add Students</a>
-      </li>
-      <li class="nav-item">
+           <li class="nav-item">
         <a class="nav-link" href="ClassServlet">View Classes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="TeacherServlet">View Teachers</a>
+        <a class="nav-link" href="AddStudent.jsp"> Add Students</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="AddSubjectController">View Subjects</a>
-      </li>
+
+      
+      
       <li class="nav-item">
         <a class="nav-link" href="StudentController">View Students</a>
       </li>

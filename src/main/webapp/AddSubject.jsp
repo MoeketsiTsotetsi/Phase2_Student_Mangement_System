@@ -13,6 +13,7 @@
 
 <% 
 Object result = session.getAttribute("result");
+Object ver = session.getAttribute("verification");
 %>
 <div class="container text-center">
 <h3>Add New Subject</h3>
@@ -33,6 +34,7 @@ Object result = session.getAttribute("result");
 <br>
 
 <p class="text-center"><core:out value="${result }"></core:out></p>
+<p class="text-center"><core:out value="${verification }"></core:out></p>
 
 </body>
 </html>

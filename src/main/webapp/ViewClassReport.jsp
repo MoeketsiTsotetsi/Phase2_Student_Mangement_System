@@ -21,7 +21,7 @@ Object sub = session.getAttribute("sub");
 
 <!-- Class details-->
 <h2 class="text-center">Class Details</h2>
-<table class="table table-striped">
+<table class="table table-striped table-dark">
 
 <tr>
 <th>Class ID</th>
@@ -39,7 +39,7 @@ Object sub = session.getAttribute("sub");
 
 </table>
 
-<table class="table table-striped">
+<table class="table table-striped table-dark">
 <tr>
 <th>Subject ID</th>
 <th>Subject Name</th>
@@ -56,7 +56,7 @@ Object sub = session.getAttribute("sub");
 </table>
 
 <h2 class="text-center">Teacher Details</h2>
-<table class="table table-striped">
+<table class="table table-striped table-dark">
 <tr>
 <th>Teacher ID</th>
 <th>Fullname</th>
@@ -74,7 +74,7 @@ Object sub = session.getAttribute("sub");
 
 <h2 class="text-center">Student List</h2>
 
-<table class="table table-striped">
+<table class="table table-striped table-dark">
 
 <tr>
 <th>Student ID</th>

@@ -2,6 +2,8 @@ package com.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -51,15 +53,21 @@ public class TeacherServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String fullname = request.getParameter("fullaname");
+		String fullname = request.getParameter("fullname");
 		String level = request.getParameter("level");
 		int sub_id = Integer.parseInt(request.getParameter("sub_id"));
 		HttpSession hs = request.getSession();
 		RequestDispatcher rd = request.getRequestDispatcher("AddTeacher.jsp");
 		String result;
+		
+		Pattern p = Pattern.compile("[a-zA-Z\\s']+");
+		Matcher m1 = p.matcher(fullname);
+		Matcher m2 = p.matcher(level);
+		
+		
 
-		if (fullname.isBlank() || level.isBlank()) {
-			result = "Please enter all details";
+		if (fullname.isBlank() || level.isBlank() || !m1.matches() || !m2.matches()) {
+			result = "Please Enter Correct  Details";
 			hs.setAttribute("result", result);
 			rd.include(request, response);
 

@@ -3,6 +3,8 @@ package com.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -56,15 +58,26 @@ public class ClassServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("AddClass.jsp");
 		Class c = new Class();
 		
-		c.setHours(hours);
-		c.setName(name);
-		c.setS_id(s_id);
-		ClassService cs = new ClassService();
-		String result = cs.saveClass(c) ;
+		Pattern p = Pattern.compile("[a-zA-Z\\s']+");
+		Matcher m1 = p.matcher(name);
+	
 		
-		hs.setAttribute("result", result);
+		if (name.isBlank() || name.length()< 2 || !m1.matches()) {
+			String result = "Pease enter the correct name";
+			hs.setAttribute("result", result);
+			rd.include(request, response);
+		}else {
+			c.setHours(hours);
+			c.setName(name);
+			c.setS_id(s_id);
+			ClassService cs = new ClassService();
+			String result = cs.saveClass(c) ;
+			
+			hs.setAttribute("result", result);
+			
+			rd.include(request, response);	
+		}
 		
-		rd.include(request, response);
 		
 		
 		

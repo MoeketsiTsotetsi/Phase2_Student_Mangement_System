@@ -11,8 +11,9 @@
 <jsp:include page="nav.jsp"></jsp:include>
 
 <div class="container">
+<h2 class="text-center">Student List</h2>
 
-<table class="table table-striped">
+<table class="table table-striped table-dark">
 	<tr>
 		<th>Student ID</th>
 		<th>Name</th>

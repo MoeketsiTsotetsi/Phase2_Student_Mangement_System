@@ -2,6 +2,8 @@ package com.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -62,8 +64,12 @@ public class StudentController extends HttpServlet {
 		HttpSession hs = request.getSession();
 		RequestDispatcher rd = request.getRequestDispatcher("AddStudent.jsp");
 		String result;
+		
+		Pattern p = Pattern.compile("[a-zA-Z\\s']+");
+		Matcher m1 = p.matcher(fullname);
+	
 
-		if (fullname.isBlank() || c_id ==0) {
+		if (fullname.isBlank() || c_id ==0 || !m1.matches()) {
 			result = "Please enter all details";
 			hs.setAttribute("result", result);
 			rd.include(request, response);

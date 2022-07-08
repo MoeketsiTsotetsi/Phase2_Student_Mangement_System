@@ -56,14 +56,27 @@ public class ClassReportController extends HttpServlet {
 			List<Student>listStudent = c.getListOfStudent();
 			Subject s = crs.getSubjectById(sub_id);
 			List<Teacher> lstTeacher = s.getListOfTeachers();
-			Teacher t = lstTeacher.get(0);
 			
-			hs.setAttribute("c", c);
-			hs.setAttribute("ls", listStudent);
-			hs.setAttribute("sub", s);
-			hs.setAttribute("t", t);
+			if(lstTeacher.size() > 0  && listStudent.size() > 0) {
+				Teacher t = lstTeacher.get(0);
+				hs.setAttribute("c", c);
+				hs.setAttribute("ls", listStudent);
+				hs.setAttribute("sub", s);
+				hs.setAttribute("t", t);
+				
+				dest_two.forward(request, response);
+			}else if(lstTeacher.isEmpty()) {
+				String result = "Subject is not assigned to a teacher, assign Teacher";
+				hs.setAttribute("result", result);
+				dest_one.forward(request, response);
+			}else {
+				String result = "Class does not have any students assigned";
+				hs.setAttribute("result", result);
+				dest_one.forward(request, response);
+			}
 			
-			dest_two.forward(request, response);
+			
+		
 
 			
 		}

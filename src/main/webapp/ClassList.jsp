@@ -13,11 +13,11 @@
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
 
-<div class="text-center">
+<div class="container text-center">
 
 <h2>List Of Classes</h2>
 
-<table class="table table-striped">
+<table class="table table-striped table-dark">
 <tr>
 <th>Class ID</th>
 <th>Class Name</th>
@@ -46,6 +46,8 @@
 <input type="number"  name="c_id">
 </form>
 
+
+<core:out value="${result }"></core:out>
 </div>
 
 

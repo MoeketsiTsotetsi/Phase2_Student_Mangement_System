@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Add new Class
+</title>
 </head>
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
@@ -14,7 +15,7 @@
 Object result = session.getAttribute("result");
 %>
 <div class="container text-center">
-<h3>Add New Subject</h3>
+<h3>Add New Class</h3>
 
 <form action="ClassServlet" method="post">
 

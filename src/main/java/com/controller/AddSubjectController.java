@@ -3,6 +3,8 @@ package com.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -54,13 +56,18 @@ public class AddSubjectController extends HttpServlet {
 		response.setContentType("text/html");
 		String name = request.getParameter("subName");
 		int credit = Integer.parseInt(request.getParameter("credit"));
-		PrintWriter pw = response.getWriter();
+		
         HttpSession hs = request.getSession();
 		
 		RequestDispatcher rd2 = request.getRequestDispatcher("AddSubject.jsp");
+		
+		Pattern p = Pattern.compile("[a-zA-Z\\s']+");
+		Matcher m1 = p.matcher(name);
+		
 
-		if (name.equals("") || credit == 0) {
-			pw.println("Please enter all fields");
+		if (name.equals("") || credit == 0  || name.length()< 2 || !m1.matches()) {
+			String ver ="Please enter the correct details";
+			hs.setAttribute("result", ver);
 			rd2.include(request, response);
 		} else {
 			Subject sub = new Subject();
@@ -74,6 +81,8 @@ public class AddSubjectController extends HttpServlet {
 			hs.setAttribute("result", result);
 			rd2.include(request, response);
 		}
+		
+		hs.invalidate();
 
 	}
 

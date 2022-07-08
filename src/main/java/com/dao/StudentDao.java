@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -34,8 +35,9 @@ public class StudentDao {
 		try {
 			SessionFactory sf = SessionBuilderResource.getSessionFactoryReference();
 			Session session = sf.openSession();
-			Query<Student> qry = session.createQuery("select s from Student s");
+			Query<Student> qry = session.createQuery("select s from Student s ORDER BY s.c_id asc");
 			List<Student> listOfStudents = qry.list();
+			
 			
 			return listOfStudents;
 		} catch (Exception e) {

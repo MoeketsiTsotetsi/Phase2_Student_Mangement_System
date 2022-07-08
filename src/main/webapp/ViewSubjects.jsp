@@ -15,7 +15,7 @@
 
 <div class="container">
 
-<table class="table table-striped">
+<table class="table table-striped table-dark">
 	<tr>
 		<th>Subject ID</th>
 		<th>Name</th>
